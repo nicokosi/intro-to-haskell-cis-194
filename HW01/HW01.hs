@@ -1,15 +1,18 @@
 {-# OPTIONS_GHC -Wall #-}
 module HW01 where
 
+import Data.Char
+
 -- Exercise 1 -----------------------------------------
 
 -- Get the last digit from a number
 lastDigit :: Integer -> Integer
-lastDigit = undefined
+lastDigit n = fromIntegral $ digitToInt $ last $ show n
 
 -- Drop the last digit from a number
 dropLastDigit :: Integer -> Integer
-dropLastDigit = undefined
+dropLastDigit n = read (init $ show n)::Integer
+
 
 -- Exercise 2 -----------------------------------------
 
