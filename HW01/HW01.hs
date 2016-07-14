@@ -11,7 +11,9 @@ lastDigit n = fromIntegral $ digitToInt $ last $ show n
 
 -- Drop the last digit from a number
 dropLastDigit :: Integer -> Integer
-dropLastDigit n = read (init $ show n)::Integer
+dropLastDigit n
+ | n < 10    = 0
+ | otherwise = read (init $ show n)::Integer
 
 
 -- Exercise 2 -----------------------------------------
