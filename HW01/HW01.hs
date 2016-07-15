@@ -15,11 +15,12 @@ dropLastDigit n
  | n < 10    = 0
  | otherwise = read (init $ show n)::Integer
 
-
 -- Exercise 2 -----------------------------------------
 
 toRevDigits :: Integer -> [Integer]
-toRevDigits = undefined
+toRevDigits n
+ | n <= 0    = []
+ | otherwise = lastDigit n : toRevDigits (dropLastDigit n)
 
 -- Exercise 3 -----------------------------------------
 
