@@ -26,7 +26,10 @@ toRevDigits n
 
 -- Double every second number in a list starting on the left.
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther = undefined
+doubleEveryOther d = case d of
+ []             -> []
+ (a : [])   -> [ a ]
+ (a : b : rest) -> a : (2 * b) : doubleEveryOther(rest)
 
 -- Exercise 4 -----------------------------------------
 

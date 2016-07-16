@@ -37,8 +37,16 @@ ex2Tests = [
 
 -- Exercise 3 -----------------------------------------
 
+testDoubleEveryOther :: ([Integer], [Integer]) -> Bool
+testDoubleEveryOther (input, expected) =
+  doubleEveryOther(input) == expected
+
 ex3Tests :: [Test]
-ex3Tests = []
+ex3Tests = [
+  Test "doubleEveryOther test" testDoubleEveryOther [
+  ([4, 9, 5, 5], [4, 18, 5, 10]),
+  ([0, 0], [0, 0])
+  ]]
 
 -- Exercise 4 -----------------------------------------
 
