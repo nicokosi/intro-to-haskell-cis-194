@@ -35,7 +35,9 @@ doubleEveryOther d = case d of
 
 -- Calculate the sum of all the digits in every Integer.
 sumDigits :: [Integer] -> Integer
-sumDigits = undefined
+sumDigits digits = case digits of
+ []             -> 0
+ (h : t)  -> (foldl1 (+) (toRevDigits(h))) + (sumDigits t)
 
 
 -- Exercise 5 -----------------------------------------

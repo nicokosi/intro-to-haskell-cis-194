@@ -50,8 +50,18 @@ ex3Tests = [
 
 -- Exercise 4 -----------------------------------------
 
+testSumDigits :: ([Integer], Integer) -> Bool
+testSumDigits (digits, expectedSum) =
+  sumDigits(digits) == expectedSum
+
 ex4Tests :: [Test]
-ex4Tests = []
+ex4Tests = [
+  Test "test sumDigits" testSumDigits [
+    ([10, 5, 18, 4], 19),
+    ([100, 5, 18, 4], 19),
+    ([12], 3),
+    ([], 0)
+  ]]
 
 -- Exercise 5 -----------------------------------------
 
