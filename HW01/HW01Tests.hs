@@ -65,8 +65,16 @@ ex4Tests = [
 
 -- Exercise 5 -----------------------------------------
 
+testLuhn :: (Integer, Bool) -> Bool
+testLuhn (creditCard, expectedValid) =
+  luhn(creditCard) == expectedValid
+
 ex5Tests :: [Test]
-ex5Tests = []
+ex5Tests = [
+  Test "test luhn" testLuhn [
+    (5594589764218858, True),
+    (1234567898765432, False)
+  ]]
 
 -- Exercise 6 -----------------------------------------
 

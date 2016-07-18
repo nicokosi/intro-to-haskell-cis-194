@@ -44,7 +44,8 @@ sumDigits digits = case digits of
 
 -- Validate a credit card number using the above functions.
 luhn :: Integer -> Bool
-luhn = undefined
+luhn creditCardNumber = (mod luhnSum 10) == 0
+  where luhnSum = sumDigits $ doubleEveryOther $ toRevDigits creditCardNumber
 
 -- Exercise 6 -----------------------------------------
 
