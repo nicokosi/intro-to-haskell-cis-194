@@ -30,7 +30,8 @@ exactMatches code guess =
 
 -- For each peg in xs, count how many times is occurs in ys
 countColors :: Code -> [Int]
-countColors = undefined
+countColors code =
+  map (\c -> length $ filter (\c2 -> c2 == c) code)  colors
 
 -- Count number of matches between the actual code and the guess
 matches :: Code -> Code -> Int
