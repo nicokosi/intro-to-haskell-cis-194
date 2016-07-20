@@ -23,7 +23,8 @@ colors = [Red, Green, Blue, Yellow, Orange, Purple]
 
 -- Get the number of exact matches between the actual code and the guess
 exactMatches :: Code -> Code -> Int
-exactMatches = undefined
+exactMatches code guess =  
+  length $ filter (\ (a,b) -> a == b) (zip code guess) 
 
 -- Exercise 2 -----------------------------------------
 
