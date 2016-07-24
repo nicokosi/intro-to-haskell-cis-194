@@ -45,7 +45,9 @@ matches code guess =
 
 -- Construct a Move from a guess given the actual code
 getMove :: Code -> Code -> Move
-getMove = undefined
+getMove code guess =
+    Move guess exactMatch ((matches code guess) - exactMatch)
+    where exactMatch = exactMatches code guess
 
 -- Exercise 4 -----------------------------------------
 
