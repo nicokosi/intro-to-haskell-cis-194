@@ -61,7 +61,7 @@ isConsistent (Move guess exactMatch1 partialMatch1) code =
 -- Exercise 5 -----------------------------------------
 
 filterCodes :: Move -> [Code] -> [Code]
-filterCodes = undefined
+filterCodes move codes = filter (\code -> isConsistent move code) codes
 
 -- Exercise 6 -----------------------------------------
 
