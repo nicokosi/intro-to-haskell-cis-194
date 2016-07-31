@@ -52,7 +52,11 @@ getMove code guess =
 -- Exercise 4 -----------------------------------------
 
 isConsistent :: Move -> Code -> Bool
-isConsistent = undefined
+isConsistent (Move guess exactMatch1 partialMatch1) code =
+  let move = getMove code guess
+  in
+    case move of
+      (Move _ exactMatch2 partialMatch2) -> exactMatch1 == exactMatch2 && partialMatch1 == partialMatch2
 
 -- Exercise 5 -----------------------------------------
 
